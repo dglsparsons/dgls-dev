@@ -13,7 +13,7 @@ export default function Home() {
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main className="flex-grow">
-      <div className="grid grid-cols-fr-auto gap-6">
+      <div className="grid sm:grid-cols-fr-auto gap-6">
         <div>
           <h2 className="text-xl font-medium">Hi, I'm Douglas 👋</h2>
           <p className="italic mt-6">

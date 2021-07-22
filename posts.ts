@@ -1,9 +1,29 @@
+import fs from 'fs'
+import path from 'path'
+
+const postsDir = path.join(process.cwd(), '/posts')
+
+function allPostSlugs() {
+  const filenames = fs.readdirSync(postsDir)
+
+  return filenames.map((n) => n.replace('\.md', ''))
+}
+
+function getPost(id: string) {
+  const postPath = path.join(postsDir, `${id}.md`)
+  const content = fs.readFileSync(postPath, 'utf8')
+
+}
+
+
+
 interface Post {
   id: string
   date: string
   title: string
 }
 
+/*
 export const posts: Post[] = [
   {
     id: "formula-1-pistons",
@@ -86,3 +106,4 @@ export const posts: Post[] = [
     title: "You should only write useful tests",
   }
 ]
+*/
