@@ -9,7 +9,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <nav className="flex justify-between py-4 px-6 font-medium text-gray-700 items-center">
         <Link href="/"><a className="text-xl hover:underline">dgls | blog</a></Link>
         <div className="flex gap-8 items-center">
-          <a className="bg-teal-400 px-2 py-1 text-white border rounded border-white hover:bg-teal-500" target="_blank" href="https://twitter.com/dglsparsons">
+          <a className="bg-teal-400 px-2 py-1 text-white border rounded border-white hover:bg-teal-500" target="_blank" href="https://twitter.com/dglsparsons" rel="noreferrer">
             Follow Me
           </a>
         </div>
