@@ -16,10 +16,10 @@ export default function Home({ posts }: { posts: Post[] }) {
         <div>
           <h2 className="text-xl font-medium">Hi, I&apos;m Douglas 👋</h2>
           <p className="italic mt-6">
-            I&apos;m a software engineer currently at <a className="hover:underline text-teal-500" href="https://shamaazi.com" target="_blank" rel="noreferrer">Shamaazi</a>.
+            I&apos;m a software engineer currently at <a className="hover:underline text-indigo-600" href="https://shamaazi.com" target="_blank" rel="noreferrer">Shamaazi</a>.
           </p>
           <p className="italic mt-3">
-            Soon joining ▲<a href="https://vercel.com" className="hover:underline text-teal-500" target="_blank" rel="noreferrer">Vercel</a>.
+            Soon joining ▲<a href="https://vercel.com" className="hover:underline text-indigo-600" target="_blank" rel="noreferrer">Vercel</a>.
           </p>
           <p className="italic mt-3">
             This is a place for my thoughts on programming and the world in general.
