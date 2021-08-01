@@ -33,7 +33,7 @@ export default function Home({ posts }: { posts: Post[] }) {
         {posts.map((p) => {
           return <Fragment key={p.id}>
             <aside className="flex text-gray-500 items-center justify-end">{p.date}</aside>
-            <Link href={`/posts/${p.id}`}><a className="hover:underline text-lg cursor-pointer font-semibold">{p.title}</a></Link>
+            <Link href={`/posts/${p.id}`}><a className="hover:underline text-lg cursor-pointer font-medium">{p.title}</a></Link>
           </Fragment>
         })}
       </div>

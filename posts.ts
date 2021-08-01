@@ -18,6 +18,7 @@ export function getPost(id: string): Post {
     id,
     title: data['title'],
     date: data['date'].toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' }),
+    isoDate: data['date'].toISOString(),
     description: data['description'],
     content
   }
@@ -26,13 +27,14 @@ export function getPost(id: string): Post {
 export function getAllPosts(): Post[] {
   const ids = getAllPostIDs()
 
-  return ids.map((s) => getPost(s))
+  return ids.map((s) => getPost(s)).sort((a, b) => b.isoDate > a.isoDate ? 1 : -1)
 }
 
 
 export interface Post {
   id: string
   date: string
+  isoDate: string
   description: string
   title: string
   content: string
