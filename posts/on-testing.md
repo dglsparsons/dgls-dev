@@ -2,7 +2,7 @@
 title: You should only write USEFUL tests
 description: A common mistake is to test every piece of code you write. This can be harmful and unnecessary. Let's explore why.
 date: 2020-09-18
-cover: /img/remote/immobile-1280w.jpg
+cover: /img/immobile-1280w.jpg
 ---
 
 Through my career in software I've come across a broad range of attitudes and opinions towards testing code. The two
@@ -33,8 +33,8 @@ look at the above example, do you think there's any possibility it's not doing w
 expressed in a simpler way? Is it hard to wrap your head around? The answer to all three of these questions is
 (hopefully) no. This illustrates how code can be intuitively correct at a glance, without the need for extensive proof
 or testing. Sir Tony Hoare, a hugely influential computer scientist, infamously said the following:
-> “There are two ways of constructing a piece of software: One is to make it so simple that there are obviously no
-> errors, and the other is to make it so complicated that there are no obvious errors.”
+> There are two ways of constructing a piece of software: One is to make it so simple that there are obviously no
+> errors, and the other is to make it so complicated that there are no obvious errors.
 
 This piece of rhetoric fits in perfectly with the questions we asked of the `Sum` example. In practice we can see that
 tests are only really needed when something is 'so complicated that there are no obvious errors'. These tests would then
@@ -68,7 +68,7 @@ In areas of code that are rapidly and constantly changing in structure, higher l
 maintainability and stability, as the higher-level workings of a system are typically more stable.
 These tests are significantly less likely to be made completely redundant.
 
-![Titanic Sinking](/img/remote/titanic-tests.png)
+![Titanic Sinking](/img/titanic-tests.png)
 
 This, however, poses an interesting conundrum: how do we know when code
 is likely to change in structure or approach in the future? If we could identify these areas ahead of time, then our
@@ -94,7 +94,7 @@ On many of the large scale software projects I have worked on, a rather interest
 important, business critical pieces of code are often the most insufficiently tested. Their outputs lack clear
 definition and seemingly any small change could spell disaster. Yet however, they remain this way.
 
-![Unmoveable rock](/img/remote/immobile.webp)
+![Unmoveable rock](/img/immobile.webp)
 
 Several years ago I
 worked on a NHS project. This was, to massively oversimplify, an incredibly complicated and fundamental system responsible

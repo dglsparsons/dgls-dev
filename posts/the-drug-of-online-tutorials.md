@@ -2,7 +2,7 @@
 title: The DRUG of online tutorials
 description: Programming tutorials all sell you a dream. A dream of untapped skills. A dream of potential. But they all have the same problem.
 date: 2020-10-12T15:45:00+00:00
-cover: /img/remote/drugs.jpg
+cover: /img/drugs.jpg
 ---
 Have you ever felt like you're stumbling in the dark trying to learn a new concept? Like you know where you're trying
 to get to, but absolutely no idea how to get there?

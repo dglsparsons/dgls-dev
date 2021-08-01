@@ -2,7 +2,7 @@
 title: Why EFFECTIVE COMMUNICATION is the key skill for being an awesome programmer
 description: Programming is all about communication. And yet, communication is a difficult thing to get right. Here's why it's so important, and how to communicate better.
 date: 2020-11-03T12:20:00
-cover: /img/remote/writing.jpg
+cover: /img/writing.jpg
 ---
 
 Programming is all about communication. We communicate with computers to tell them what we want them to do. We instruct them to carry out tasks to the finest degree of accuracy. We communicate with our peers, sharing ideas and technology. We communicate with business owners, gathering requirements and context on problems. And yet, communication is a difficult thing to get right.
@@ -25,7 +25,7 @@ Bugs, misunderstandings and issues in translation can occur at any, or all, of t
 
 ## 🙊 Chinese whispers
 
-![Whispering](/img/remote/whisper.jpg)
+![Whispering](/img/whisper.jpg)
 
 This game becomes even bigger and more error-prone as you scale up teams, or have open-source contributors. The more programmers working on a codebase, the more miscommunication and misunderstanding there can be.
 
@@ -35,7 +35,7 @@ This communication is even more challenging because of the huge variation in wha
 
 Communication is also inherently hard because of how language works. In everyday speech, there are multiple ways to interpret any sentence. These ways are often dependent on context or our environments. And then, there are multiple ways to represent everything as code. There's an old joke that illustrates this well.
 
-![Milk](/img/remote/milk.jpg)
+![Milk](/img/milk.jpg)
 
 > A software engineer gets sent to the shops by his wife.
 
@@ -54,7 +54,7 @@ We've identified that communication can act as Chinese whispers. Language can be
 
 It's important to remember how we communicate. When thinking of communication my mind always jumps straight to two people talking, or a board room full of people wearing suits.
 
-![Meeting](/img/remote/meeting.jpg)
+![Meeting](/img/meeting.jpg)
 
 However, this is rarely the case. We communicate far more frequently in our work, and talking isn't the only way we communicate. Talking often isn't even the best way to communicate.
 

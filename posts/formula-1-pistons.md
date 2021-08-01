@@ -2,14 +2,14 @@
 title: 'Tolerances: How Formula 1 pistons can teach us to be better developers'
 description: Why do Formula 1 car pistons cost around 1,000 times the amount of a typical road car piston and what can this teach us about programming?
 date: 2021-01-18T11:00:00
-cover: /img/remote/pistons.jpg
+cover: /img/pistons.jpg
 ---
 
 Recently, while procrastinating from work, I found myself watching a youtube video on [Formula 1 pistons](https://www.youtube.com/watch?v=lCEKJxHiEIM).
 
 This video seeks to answer the question: why does a Formula 1 car piston cost around 1,000 times the amount of a typical road car (£50,000 vs £50), despite appearing very similar and serving the same purpose?
 
-![Whispering](/img/remote/pistons.jpg)
+![Whispering](/img/pistons.jpg)
 
 *Left: piston from an American muscle car. Right: piston from a formula 1 car.*
 
@@ -21,7 +21,7 @@ Manufacturing a car piston is a game of playing with tolerances.
 
 The piston itself has to fit into a cylinder block snugly, with a small gap around the sides to allow it to move freely. If the gap between a piston and the cylinder is too big, then burning fuel can escape, and the piston is far less efficient. If the gap is too small, then the piston can seize up, blocking the engine completely.
 
-![Piston Cycle](/img/remote/piston-cycle.jpg)
+![Piston Cycle](/img/piston-cycle.jpg)
 *The process a car piston goes through in a single cycle*
 
 This adds some serious complexity for building these parts. Not only do they have to be designed to an incredible specification, but the margin for error when manufacturing these parts is so small that they require specialised machinery and special processes to make sure they are fit for purpose.

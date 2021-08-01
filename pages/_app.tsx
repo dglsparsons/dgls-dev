@@ -1,10 +1,18 @@
 import '../styles/globals.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 import type { AppProps } from 'next/app'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return <div className="flex flex-col min-h-screen text-gray-600">
+    <Head>
+      <link rel="icon" href="/favicon.ico" />
+      <meta property="og:site_name" content="Douglas Parsons' Blog" />
+      <meta property="og:title" content="Douglas Parsons' Blog" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@dglsparsons" />
+    </Head>
     <header className="bg-white shadow-sm sticky top-0 z-10">
       <nav className="flex justify-between py-4 px-6 font-medium text-gray-700 items-center">
         <Link href="/"><a className="text-lg hover:underline">dgls | blog</a></Link>

@@ -2,7 +2,7 @@
 title: Go Logger - Why we wrote our own
 description: At Shamaazi, we found the existing Go libraries for logging overcomplicated and not neatly doing what we wanted. Instead, we wrote our own. Here's why.
 date: 2020-10-09T13:50:00+00:00
-cover: /img/remote/logs.jpg
+cover: /img/logs.jpg
 ---
 
 At Shaamazi, we created and open-sourced our logger: [antilog](https://github.com/shamaazi/antilog). We created this

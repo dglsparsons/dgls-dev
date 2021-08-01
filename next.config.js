@@ -4,4 +4,13 @@ module.exports = {
     defaultLocale: "en",
   },
   reactStrictMode: true,
+  redirects() {
+    return [
+      {
+        source: "/img/remote/:pic",
+        destination: "/img/:pic",
+        permanent: true,
+      },
+    ];
+  }
 }

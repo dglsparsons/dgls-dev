@@ -2,7 +2,7 @@
 title: Learning programming is DIFFICULT
 description: Have you ever wanted to learn how to program, or to learn a new concept? Have you ever come across a technology you wanted to play around with but had no idea how to get started?
 date: 2020-10-20T13:18:00+00:00
-cover: /img/remote/laptop.jpg
+cover: /img/laptop.jpg
 ---
 
 Have you ever wanted to learn how to program, or to learn a new concept? Have you ever come across a technology you wanted to play around with but had no idea how to get started? Does it feel like there is *too* much information about programming on the internet?
@@ -42,7 +42,7 @@ As a result, the most promoted information can often be the least valuable. Peop
 
 Have you ever heard the interview question: "What happens when you type google.com into your browser's address bar and press enter?"
 
-![Browser search](/img/remote/search.jpg)
+![Browser search](/img/search.jpg)
 
 If you haven't, take a moment to think. It's a big question. How deep can your knowledge of it go?
 
@@ -83,7 +83,7 @@ The problem, though, is that beginners often bump up against all these concepts.
 
 The list goes on. Most tutorials fail to recognise this massive amount of knowledge you need beforehand. Instead, they jump in at the deep end. "Install this npm package", "run this command". Or worse, "copy this code", "follow me".
 
-![Confused](/img/remote/confused.png)
+![Confused](/img/confused.png)
 
 Instead, there is a need to focus on what concepts and abstractions we use and rely on as programmers. Rather than teaching how to build a website, we need to give insight into our terminology and culture. We need to focus on _why_ we do things. What each abstraction is for, what is its purpose. As a beginner, programming is overwhelming because nobody explains the concepts you need. There is no source for this information. Instead, everyone assumes you can pick up concepts as you go along. Or, they assume you understand enough beforehand.
 

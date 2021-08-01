@@ -9,6 +9,7 @@ export default function Article({ post }: { post: Post }) {
   return <>
     <Head>
       <title>{post.title}</title>
+      <meta name="description" content={post.description}></meta>
     </Head>
     <h1 className="text-xl font-medium mb-4">{post.title}</h1>
     <div className="flex justify-between mb-12">
@@ -20,7 +21,7 @@ export default function Article({ post }: { post: Post }) {
         <aside className="flex text-gray-500 items-center justify-end">{post.date}</aside>
       </div>
     </div>
-    <div className="prose prose-indigo" dangerouslySetInnerHTML={{ __html: post.content }}>
+    <div className="prose prose-indigo max-w-none" dangerouslySetInnerHTML={{ __html: post.content }}>
     </div>
   </>
 

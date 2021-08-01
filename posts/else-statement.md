@@ -2,7 +2,7 @@
 title: Write better code and be a better programmer by NEVER USING ELSE statements
 description: "I've written production code in a huge variety of languages, through Haskell, Scala, Go, Python, Java or JavaScript. Across all these, I noticed one significant trend: I pretty much never use the ELSE statement. Here's why."
 date: 2020-11-10T13:20:00
-cover: /img/remote/thinking.webp
+cover: /img/thinking.webp
 ---
 
 I've been a professional programmer for the last several years. During this time I've risen rapidly through the ranks. I started as an intern, but I'm now the Lead Engineer responsible for a suite of products that serve over 160,000 people in over 140 different countries.
@@ -19,11 +19,11 @@ I'm a firm believer that code should be optimised to be read by people in the fu
 
 The problem is the ability to read code is subjective: it's hard to define exactly what makes code readable. One rule that seeks to clarify this though, is the line-of-sight rule. This is a popular rule in the Go community. [Mat Ryer](https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88) defines it concisely in his talk and article. Simply stated, this is the idea that the ‘happy path' in code should be indented as little as possible.
 
-![Happy path](/img/remote/happy-path.png)
+![Happy path](/img/happy-path.png)
 
 Contrastingly, any error handling or special case code should be indented further.
 
-![Special case](/img/remote/special-case.png)
+![Special case](/img/special-case.png)
 
 Any code that follows this has a unique property: scanning the least indented code is sufficient to understand what any piece of code is doing. Scanning the more indented code shows all the special cases and errors that can occur. This makes it super easy to understand at just a glance.
 
@@ -31,7 +31,7 @@ So how do else statements relate to this?
 
 Else statements are problematic as they force code down a level of indentation. It suddenly becomes unclear what code relates to a ‘happy path', and what a special case really is.
 
-![Unclear](/img/remote/unclear-else.png)
+![Unclear](/img/unclear-else.png)
 
 This lack of clarity makes the code harder to scan through, and hurts the readability.
 

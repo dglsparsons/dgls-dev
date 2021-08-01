@@ -2,7 +2,7 @@
 title: Avoid COGNITIVE OVERLOAD when programming in 4 simple ways
 description: Programming can be an arduous activity. You have to remember what you are doing, the context and inner workings of a system, the building blocks of the language you are using. All while coming up with creative solutions to problems. All this can lead to COGNITIVE OVERLOAD. Luckily, there are some simple steps we can take to avoid this.
 date: 2020-10-26T09:51:00
-cover: /img/remote/writing.jpg
+cover: /img/writing.jpg
 ---
 
 Programming can be an arduous activity. You have to remember what you are doing. Remember the context and inner workings of an application or system. Remember the syntax and building blocks of the language you are working in. Remember locations of code to come back to and tweak later. Remember what steps you have to take to achieve a goal. And you often have to do all this while learning a new codebase, technology, language and domain.
@@ -13,7 +13,7 @@ Our brains aren't designed to store and process all this information all the [ti
 
 ## 1. ✍️ Write Everything Down
 
-![Writing](/img/remote/writing.jpg)
+![Writing](/img/writing.jpg)
 
 The first thing I want to talk about is 'Getting Things Done'. This is a productivity methodology introduced by [David Allen](https://gettingthingsdone.com/). His book tackles a common problem: often we have many different things in our lives to track and organise. These commitments can range from work, friends, hobbies or family. Our commitments are usually only stored within our head and as a result, are badly managed.
 
@@ -27,7 +27,7 @@ Every single piece of information written down is one less thing to think about.
 
 ## 2. 🔖 Bookmark Locations To Come Back To
 
-![Bookmarks](/img/remote/bookmarks.jpg)
+![Bookmarks](/img/bookmarks.jpg)
 
 Have you ever gone to make a specific change when programming and recognised a piece of tech debt or a bug lurking? And then, by the time you've jumped down a rabbit hole of fixing things up you've forgotten why you were even there in the first place?
 
@@ -39,7 +39,7 @@ I like to think of this as a stack of plates we are balancing, all of different 
 
 ## 3. 🕑 Spend Time Away
 
-![Time Away](/img/remote/relax.jpg)
+![Time Away](/img/relax.jpg)
 
 It's a widely held theory that sleep serves a clear purpose: it helps our brains decongest. Sleep helps store important memories and  things you've learned. It gets rid of unimportant memories. It allows our brains to sort through complicated thoughts and [feelings](https://www.healthline.com/health/why-do-we-dream).
 
@@ -53,7 +53,7 @@ Furthermore, it's important we tap into this background processing the brain can
 
 Have you ever heard of [rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)? The idea comes from a book written by [Hunt and Thomas](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/). The idea is that a programmer would explain his or her code, often line-by-line to a rubber duck. In forcing his/herself into the perspective of a teacher and explaining what the code should do, and actually does, problems are often spotted.
 
-![Rubber Duck](/img/remote/duck.jpg)
+![Rubber Duck](/img/duck.jpg)
 
 The idea used a rubber duck as this is an 'inanimate object', and prevents disrupting anyone else. However, this neglects all the benefits that talking to another person can provide. They can:
 - ask questions that make you consider your approach

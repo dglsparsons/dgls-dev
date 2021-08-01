@@ -26,6 +26,9 @@ module.exports = {
             code: {
               color: colors.blueGray[700],
             },
+            blockquote: {
+              color: colors.blueGray[700],
+            },
             strong: {
               color: colors.blueGray[700],
               fontWeight: 500,

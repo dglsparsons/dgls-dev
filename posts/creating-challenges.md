@@ -2,7 +2,7 @@
 title: "Creating challenges: three ways to improve the technical assessment"
 description: I’ve been reflecting on ‘what makes a good engineering assessment’, and I’ve come to the conclusion that a good assessment – as part of recruiting – should pay careful attention to three main things.
 date: 2020-12-30T18:45:00
-cover: /img/remote/dark_code.jpg
+cover: /img/dark_code.jpg
 ---
 
 
