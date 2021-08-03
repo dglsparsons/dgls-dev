@@ -2,7 +2,6 @@
 title: How to write IMMUTABLE code and never get stuck debugging again
 description: Lets look how walruses eating cheese can explain how immutability works, why you should care, and why the counterarguments against immutable code aren't worth considering.
 date: 2020-11-17T15:20:00
-cover: /img/walrus.jpg
 ---
 
 I've written production code in a variety of different languages throughout my career, including Haskell, Scala, Go, Python, Java or JavaScript. While each language has its own clear benefits, working as a polyglot across a range of different paradigms has changed the way I write code. Certain skills and concepts are transferable regardless of the language being written. I believe immutability is one of these key concepts. By writing immutable code it is possible to make programs easier to reason about, easier to write and easier to debug.

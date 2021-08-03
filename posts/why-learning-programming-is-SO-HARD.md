@@ -2,7 +2,6 @@
 title: Learning programming is DIFFICULT
 description: Have you ever wanted to learn how to program, or to learn a new concept? Have you ever come across a technology you wanted to play around with but had no idea how to get started?
 date: 2020-10-20T13:18:00+00:00
-cover: /img/laptop.jpg
 ---
 
 Have you ever wanted to learn how to program, or to learn a new concept? Have you ever come across a technology you wanted to play around with but had no idea how to get started? Does it feel like there is *too* much information about programming on the internet?

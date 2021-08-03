@@ -2,7 +2,6 @@
 title: 3 popular technologies that I will strive to never use again
 description: There are a lot of different technologies out there. More than anyone could possibly explore. The de-facto position is to look for technologies that are popular, following the logic that “if enough people like it, it must be good”. In my experience, this isn’t always the case though.
 date: 2021-01-08T14:45:00
-cover: /img/dark_code.jpg
 ---
 
 There are a lot of different technologies out there. More than anyone could possibly explore. The de-facto position is to look for technologies that are popular, following the logic that “if enough people like it, it must be good”.

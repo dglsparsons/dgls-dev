@@ -2,7 +2,6 @@
 title: Write better code and be a better programmer by NEVER USING ELSE statements
 description: "I've written production code in a huge variety of languages, through Haskell, Scala, Go, Python, Java or JavaScript. Across all these, I noticed one significant trend: I pretty much never use the ELSE statement. Here's why."
 date: 2020-11-10T13:20:00
-cover: /img/thinking.webp
 ---
 
 I've been a professional programmer for the last several years. During this time I've risen rapidly through the ranks. I started as an intern, but I'm now the Lead Engineer responsible for a suite of products that serve over 160,000 people in over 140 different countries.
