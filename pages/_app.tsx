@@ -9,9 +9,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <Head>
       <link rel="icon" href="/favicon.ico" />
       <meta property="og:site_name" content="Douglas Parsons' Blog" />
-      <meta property="og:title" content="Douglas Parsons' Blog" />
+      <meta key="og:title" property="og:title" content="Douglas Parsons' Blog" />
+      <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@dglsparsons" />
+      <meta name="theme-color" content="#4F46E5" />
     </Head>
     <header className="bg-white shadow-sm sticky top-0 z-10">
       <nav className="flex justify-between py-4 px-6 font-medium text-gray-700 items-center">

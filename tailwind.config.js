@@ -23,6 +23,10 @@ module.exports = {
               fontSize: '1.125rem',
               fontWeight: 500,
             },
+            img: {
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            },
             code: {
               color: colors.blueGray[700],
             },

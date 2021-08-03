@@ -10,6 +10,8 @@ export default function Article({ post }: { post: Post }) {
     <Head>
       <title>{post.title}</title>
       <meta name="description" content={post.description}></meta>
+      <meta property="og:description" content={post.description}></meta>
+      <meta key="og:title" property="og:title" content={post.title} />
     </Head>
     <h1 className="text-xl font-medium mb-4">{post.title}</h1>
     <div className="flex justify-between mb-12">
