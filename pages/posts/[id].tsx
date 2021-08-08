@@ -2,8 +2,6 @@ import { Post, getPost, getAllPostIDs } from '../../posts'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import remark from 'remark'
-import html from 'remark-html'
 
 export default function Article({ post }: { post: Post }) {
   return <>
@@ -31,10 +29,9 @@ export default function Article({ post }: { post: Post }) {
 
 export const getStaticProps: GetStaticProps<{ post: Post }, { id: string }> = async ({ params = {} }) => {
   const { id = '' } = params
-  const rawPost = getPost(id)
-  const content = await remark().use(html).process(rawPost.content)
+  const post = await getPost(id)
   return {
-    props: { post: { ...rawPost, content: content.toString() } }
+    props: { post }
   }
 }
 

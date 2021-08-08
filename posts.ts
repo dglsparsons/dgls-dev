@@ -1,5 +1,7 @@
 import fs from 'fs'
 import path from 'path'
+import remark from 'remark'
+import html from 'remark-html'
 import matter from 'gray-matter'
 
 const postsDir = path.join(process.cwd(), '/posts')
@@ -9,10 +11,12 @@ export function getAllPostIDs(): string[] {
   return filenames.map((n) => n.replace('\.md', ''))
 }
 
-export function getPost(id: string): Post {
+export async function getPost(id: string): Promise<Post> {
   const postPath = path.join(postsDir, `${id}.md`)
   const fileContents = fs.readFileSync(postPath, 'utf8')
   const { data, content } = matter(fileContents)
+
+  const parsedContent = await remark().use(html).process(content)
 
   return {
     id,
@@ -20,14 +24,16 @@ export function getPost(id: string): Post {
     date: data['date'].toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' }),
     isoDate: data['date'].toISOString(),
     description: data['description'],
-    content
+    content: parsedContent.toString()
   }
 }
 
-export function getAllPosts(): Post[] {
+export async function getAllPosts(): Promise<Post[]> {
   const ids = getAllPostIDs()
 
-  return ids.map((s) => getPost(s)).sort((a, b) => b.isoDate > a.isoDate ? 1 : -1)
+  const posts = await Promise.all(ids.map((s) => getPost(s)))
+
+  return posts.sort((a, b) => b.isoDate > a.isoDate ? 1 : -1)
 }
 
 

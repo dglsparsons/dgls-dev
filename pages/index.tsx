@@ -43,6 +43,6 @@ export default function Home({ posts }: { posts: Post[] }) {
 
 export async function getStaticProps() {
   return {
-    props: { posts: getAllPosts() }
+    props: { posts: await getAllPosts() }
   }
 }
