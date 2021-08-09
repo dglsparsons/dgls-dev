@@ -22,7 +22,6 @@ ${posts.reduce((acc, post) => {
     <title>${post.title}</title>
     <link href="https://dgls.dev/posts/${post.id}"/>
     <updated>${post.isoDate}</updated>
-    <content type="html"> ${post.content} </content>
   </entry>`;
   }, "")}
 </feed>
