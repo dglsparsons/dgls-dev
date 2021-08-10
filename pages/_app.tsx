@@ -1,5 +1,4 @@
 import '../styles/globals.css'
-import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
@@ -28,17 +27,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <div className="flex-grow max-w-3xl px-6 py-16 self-center">
       <Component {...pageProps} />
     </div>
-    <footer className="min-h-[80px] bg-gray-100 flex items-center justify-center">
-      <a
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by{' '}
-        <span >
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </span>
-      </a>
-    </footer>
   </div>
 }
