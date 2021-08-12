@@ -19,6 +19,7 @@ The qualities we do look for are probably considered unusual compared to most so
 We give our potential candidates a short engineering assignment as part of our hiring process. We explicitly request that they don't spend more than an hour on it, but it still gives us a vast amount of information that just simply isn't evident from their CV.
 
 Reviewing these assignments has been eye-opening. Most solutions lack attention to detail in at least one area. We begin by asking relatively simple questions of the submissions:
+
 - **Correctness** – does the solution work for all inputs?
 - **Validation** – are the inputs validated, what happens if we try to break the system?
 - **Testing** – How do we know their solution is correct? Is there any proof that it reliably works?
@@ -53,17 +54,16 @@ As a side note, if anyone knows how to build a company that can turn unhappy peo
 
 Thankfully, Patrick Collison also shared his ‘cheat’ to achieve this. Simply hire people who are happy, positive people already. This is the culture we want to build, so we’re taking the same shortcut he did at Stripe. By hiring happy people, we can ensure we maintain a happy culture.
 
-
 ## Closing Thoughts
 
 As a tiny company, we have to be incredibly careful about the people we hire. They can have a massive impact on our products, for better or for worse, and contribute heavily towards our culture. Because of this, we deliberately look for these three qualities as signs of excellence in people.
 
 If we can find people to hire who show three key qualities: a happy outlook, the ability to express themselves clearly, and a keen eye for details, then we know they will be a brilliant hire.
 
-***
+---
 
 Would you like to hear more about our hiring process? Do you want to know more about the problems people have in our technical assessment, or the common errors on CVs? Get in touch and let me know.
 
-***
+---
 
 Enjoyed this post? Want to share your thoughts on the matter? Found this article helpful? Disagree with me? Let me know by [messaging me on Twitter](twitter.com/dglsparsons).

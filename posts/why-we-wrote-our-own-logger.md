@@ -13,6 +13,7 @@ A logger where context can be built over time.
 And finally, a logger that doesn't have log-levels.
 
 Here I'll look at the following:
+
 - Why we care about logging so much.
 - What the current logging landscape for Go looks like.
 - Why each of these fundamental features (structured logging, building context and no log-levels) are so important
@@ -55,7 +56,6 @@ popular contenders, the standard library and logrus, both fall short. The standa
 at all. Logrus does but requires some small amount of config to achieve this (`logrus.SetFormatter(&logrus.JSONFormatter{})`).
 This configuration is only a single line of code, but it is easy to miss when writing a new application, script or tool.
 
-
 Supporting many output formats is another pitfall. This adds more complexity to the logger, making it bulkier than we would like
 (in both binary size and CPU time). Instead, a logger that outputs JSON by default with no configuration required is ideal.
 antilog can be used straight out of the box, it requires no configuration at all.
@@ -65,23 +65,35 @@ antilog can be used straight out of the box, it requires no configuration at all
 As part of our logging, we want the ability to build up of information in logs over the lifecycle of an operation.
 To get a full picture of what is happening in our logs, we need to be able to provide context to any messages.
 To illustrate this point, here is a pretty rubbish log message that could show an issue parsing data:
+
 ```json
 { "timestamp": "2019-11-18T14:00:32Z", "message": "unable to parse json" }
 ```
+
 We can't easily identify what is going on here: is this an application issue? is it expected? What's causing it?
 By adding a small amount of context we can immediately glean much more information from our logs:
+
 ```json
-{ "timestamp": "2019-11-18T14:00:32Z", "message": "unable to parse json", "path": "/api/signup", "method": "POST", "status": 400, "request_id": "1234abc"}
+{
+  "timestamp": "2019-11-18T14:00:32Z",
+  "message": "unable to parse json",
+  "path": "/api/signup",
+  "method": "POST",
+  "status": 400,
+  "request_id": "1234abc"
+}
 ```
+
 We can now see that it's an API endpoint for signup this happened at. From the 400 response, we can assume that this is
 due to a user submitting bad data rather than an error in our system. From a small amount of context, a previously
-meaningless log message  becomes valuable.
+meaningless log message becomes valuable.
 
 Unless we have a messy codebase, the places where want to write logs don't necessarily have access to all
 the information we might want. We don't want polluting to our code by passing `path`, `method`, `request_id` and many other
 fields around. We want the ability to attach these to our logger, building up the eventual output one piece at a time.
 
 In antilog we can build up an output by passing the logger around (or attaching it to context, if you've done much Go):
+
 ```go
     logger := antilog.With(
        "common", "this is a common field",
@@ -100,6 +112,7 @@ This can be broken down by reasoning about each different log level:
 **Warning:**
 
 Warning messages fall into one of two categories:
+
 - warnings you can ignore
 - warnings you can't ignore
 
@@ -110,6 +123,7 @@ have a warning that does not fit into these two categories, warning as a log lev
 **Error:**
 
 A similar approach removes the need for errors. Errors fall into one of two categories:
+
 - Errors that you are handling (and recovering from)
 - Errors that you are not handling.
 
@@ -138,6 +152,7 @@ just a `Write` method. Either `Write` your logs or don't.
 
 The current logging landscape for Go was lacking. Existing libraries overcomplicated the process of writing logs by
 falling into one of four traps:
+
 - forcing the use of log-levels;
 - lacking structured logging;
 - not allowing context to be built

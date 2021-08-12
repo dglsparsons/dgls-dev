@@ -19,54 +19,55 @@ React provides some hooks out of the box (`useState`, `useEffect` and `useContex
 Most websites have to perform some form of asynchronous actions, whether it is loading data to display on the page or submitting data based on a user’s input and actions. It’s helpful to keep a track of the status of these asynchronous actions; is it currently loading? has it returned a result? Was there an error?
 
 We found a lot of our components started sharing a lot of similar code, either for fetching data on an initial load or for submitting data. This looked like the following:
+
 ```javascript
 const MyComponent = () => {
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const [result, setResult] = useState(null)
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [result, setResult] = useState(null);
 
   useEffect(async () => {
-    setResult(null)
-    setError(null)
-    setLoading(true)
+    setResult(null);
+    setError(null);
+    setLoading(true);
     try {
       const result = doSomeAction();
-      setResult(result)
+      setResult(result);
     } catch (e) {
-      setError(e)
+      setError(e);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }, [])
+  }, []);
 
   if (loading) {
-    return <>loading...</>
+    return <>loading...</>;
   }
 
   if (error) {
-    return <>something broke</>
+    return <>something broke</>;
   }
 
-  return <>{result}</>
-}
+  return <>{result}</>;
+};
 ```
 
 All this loading and error logic can be pulled into a hook, making our interface much neater.
 
 ```javascript
 const MyTidyComponent = () => {
-  const {loading, result, error} = useAsync(doSomeAction)
+  const { loading, result, error } = useAsync(doSomeAction);
 
   if (loading) {
-    return <>loading...</>
+    return <>loading...</>;
   }
 
   if (error) {
-    return <>something broke</>
+    return <>something broke</>;
   }
 
-  return <>{result}</>
-}
+  return <>{result}</>;
+};
 ```
 
 This `useAsync` hook is responsible for managing the loading, error and result states, removing the need for all this logic within the actual component. It also lets us reuse this throughout our application. This massively simplifies loading data onto a page.
@@ -86,53 +87,56 @@ We also found that the hook sometimes caused a memory leak if a form submission 
 The full version of our `useAsync` hook is here:
 
 ```javascript
-import { useEffect, useState, useCallback, useRef } from 'react'
+import { useEffect, useState, useCallback, useRef } from "react";
 
 export default (asyncFunction, immediate = true) => {
-  const [loading, setLoading] = useState(false)
-  const [result, setResult] = useState(null)
-  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState(null);
 
   // Track a reference to whether the useAsync is actually on a mounted component.
   // useEffect below returns a cleanup that sets this to false. Before setting
   // any state, we check if the cleanup has run. If it has, don't update the state.
-  const mounted = useRef(true)
+  const mounted = useRef(true);
 
   useEffect(() => {
     return () => {
-      mounted.current = false
-    }
-  }, [])
+      mounted.current = false;
+    };
+  }, []);
 
-  const execute = useCallback(async (...args) => {
-    setLoading(true)
-    setResult(null)
-    setError(null)
-    try {
-      const r = await asyncFunction(...args)
-      if (mounted.current) {
-        setResult(r)
+  const execute = useCallback(
+    async (...args) => {
+      setLoading(true);
+      setResult(null);
+      setError(null);
+      try {
+        const r = await asyncFunction(...args);
+        if (mounted.current) {
+          setResult(r);
+        }
+        return r;
+      } catch (e) {
+        if (mounted.current) {
+          setError(e);
+        }
+      } finally {
+        if (mounted.current) {
+          setLoading(false);
+        }
       }
-      return r
-    } catch (e) {
-      if (mounted.current) {
-        setError(e)
-      }
-    } finally {
-      if (mounted.current) {
-        setLoading(false)
-      }
-    }
-  }, [asyncFunction])
+    },
+    [asyncFunction]
+  );
 
   useEffect(() => {
     if (immediate) {
-      execute()
+      execute();
     }
-  }, [execute, immediate])
+  }, [execute, immediate]);
 
-  return { execute, loading, result, error }
-}
+  return { execute, loading, result, error };
+};
 ```
 
 ## Updating LocalStorage or SessionStorage
@@ -142,6 +146,7 @@ As part of some of our products, we populate a 'shopping basket'. This keeps a t
 React itself doesn't provide any hooks for storing data in `localStorage` or `sessionStorage`, but we wanted a consistent experience with `useState`. Realistically, it shouldn't be any harder to use `localStorage` than it would be to use state normally.
 
 For example, we might want to use `localStorage` to keep track of a user's input.
+
 ```javascript
 const storageComponent = () => {
   const [value, setValue] = useLocalStorage('storage_key', 'default_value')
@@ -151,38 +156,39 @@ const storageComponent = () => {
 ```
 
 Our hooks to achieve this look like the following:
+
 ```javascript
 const useStorage = (key, initialValue, storage) => {
   // Pass initial state function to useState so logic is only executed once
   const [storedValue, setStoredValue] = useState(() => {
     try {
-      const item = storage.getItem(key)
-      return item ? JSON.parse(item) : initialValue
+      const item = storage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
     } catch (error) {
-      console.error(error)
-      return initialValue
+      console.error(error);
+      return initialValue;
     }
-  })
+  });
 
   useEffect(() => {
     try {
       // Update storage every time the value is changed
-      storage.setItem(key, JSON.stringify(storedValue))
+      storage.setItem(key, JSON.stringify(storedValue));
     } catch (e) {
-      console.error(e)
+      console.error(e);
     }
-  }, [storedValue, storage, key])
+  }, [storedValue, storage, key]);
 
-  return [storedValue, setStoredValue]
-}
+  return [storedValue, setStoredValue];
+};
 
 export const useLocalStorage = (key, initialValue) => {
-  return useStorage(key, initialValue, window.localStorage)
-}
+  return useStorage(key, initialValue, window.localStorage);
+};
 
 export const useSessionStorage = (key, initialValue) => {
-  return useStorage(key, initialValue, window.sessionStorage)
-}
+  return useStorage(key, initialValue, window.sessionStorage);
+};
 ```
 
 ## Authenticating users
@@ -198,33 +204,34 @@ Luckily React provides the idea of a [context](https://reactjs.org/docs/hooks-re
 We can create an Auth context, and use a hook to get any information from it we want. We can also embed our auth API calls into this context.
 
 This would look like the following to use:
+
 ```javascript
 // In our top level App.js
-import { ProvideAuth } from 'hooks/useAuth'
+import { ProvideAuth } from "hooks/useAuth";
 
 export default () => {
-  return <ProvideAuth>
-    <RestOfApplication/>
-    ...
-  </ProvideAuth>
-}
+  return (
+    <ProvideAuth>
+      <RestOfApplication />
+      ...
+    </ProvideAuth>
+  );
+};
 ```
 
 ```javascript
 // in a component that wants to use Auth
-import useAuth from 'hooks/useAuth'
+import useAuth from "hooks/useAuth";
 
 export default () => {
   const { user, login, logout, resetPassword } = useAuth();
 
-  return <>
-    {user}
-  </>
-}
+  return <>{user}</>;
+};
 ```
 
-
 This hook itself looks like the following:
+
 ```javascript
 import React, { useCallback, useState, useEffect, useContext, createContext } from 'react'
 

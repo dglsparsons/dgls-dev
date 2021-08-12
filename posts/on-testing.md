@@ -18,6 +18,7 @@ business-critical code. Instead, I believe that we should be carefully consideri
 
 If you have ever taken a tutorial, watched a course, or read a book on unit testing, you have probably seen an example
 that tests a piece of code along the lines of the following:
+
 ```go
 func Sum(x int, y int) int {
     return x + y;
@@ -32,6 +33,7 @@ look at the above example, do you think there's any possibility it's not doing w
 expressed in a simpler way? Is it hard to wrap your head around? The answer to all three of these questions is
 (hopefully) no. This illustrates how code can be intuitively correct at a glance, without the need for extensive proof
 or testing. Sir Tony Hoare, a hugely influential computer scientist, infamously said the following:
+
 > There are two ways of constructing a piece of software: One is to make it so simple that there are obviously no
 > errors, and the other is to make it so complicated that there are no obvious errors.
 
@@ -40,7 +42,6 @@ tests are only really needed when something is 'so complicated that there are no
 prove value by showing that these non-obvious errors don't exist. So for simple, 'obviously' correct code, is there any
 need to add tests? Instead, before adding tests, you should ask the question: 'Is this code obviously correct, or can I change
 it make it obviously correct?'. If the answer to this question is yes, then there is no need to test what is obvious.
-
 
 ## The Coupled
 

@@ -1,8 +1,8 @@
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 module.exports = {
-  mode: 'jit',
-  purge: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
+  mode: "jit",
+  purge: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -11,8 +11,8 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        'auto-fr': 'auto 1fr',
-        'fr-auto': '1fr auto'
+        "auto-fr": "auto 1fr",
+        "fr-auto": "1fr auto",
       },
       typography: {
         DEFAULT: {
@@ -20,12 +20,12 @@ module.exports = {
             color: colors.blueGray[600],
             h2: {
               color: colors.blueGray[600],
-              fontSize: '1.125rem',
+              fontSize: "1.125rem",
               fontWeight: 500,
             },
             img: {
-              marginLeft: 'auto',
-              marginRight: 'auto',
+              marginLeft: "auto",
+              marginRight: "auto",
             },
             code: {
               color: colors.blueGray[700],
@@ -45,5 +45,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/typography')],
-}
+  plugins: [require("@tailwindcss/typography")],
+};

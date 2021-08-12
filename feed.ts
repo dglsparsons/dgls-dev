@@ -1,7 +1,7 @@
-import { getAllPosts } from './posts'
+import { getAllPosts } from "./posts";
 
 (async () => {
-  const posts = await getAllPosts()
+  const posts = await getAllPosts();
 
   console.log(`<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -16,14 +16,14 @@ import { getAllPosts } from './posts'
     <email>dglsparsons@gmail.com</email>
   </author>
 ${posts.reduce((acc, post) => {
-    return `${acc}
+  return `${acc}
   <entry>
     <id>${post.id}</id>
     <title>${post.title}</title>
     <link href="https://dgls.dev/posts/${post.id}"/>
     <updated>${post.isoDate}</updated>
   </entry>`;
-  }, "")}
+}, "")}
 </feed>
-`)
-})()
+`);
+})();

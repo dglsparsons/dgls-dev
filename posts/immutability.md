@@ -7,6 +7,7 @@ date: 2020-11-17T15:20:00
 I've written production code in a variety of different languages throughout my career, including Haskell, Scala, Go, Python, Java or JavaScript. While each language has its own clear benefits, working as a polyglot across a range of different paradigms has changed the way I write code. Certain skills and concepts are transferable regardless of the language being written. I believe immutability is one of these key concepts. By writing immutable code it is possible to make programs easier to reason about, easier to write and easier to debug.
 
 Here, we’ll look at three things:
+
 - how walruses eating cheese can explain how immutability works,
 - why you should care, and
 - why the counterarguments against immutable code aren’t worth considering.
@@ -26,6 +27,7 @@ He talks about feeding walruses cheese.
 In a mutable version, we might instruct each walrus to eat some cheese. This cheese then gets added to the contents of their stomach. Makes a lot of sense, right?
 
 In an immutable version, we have to perform a mind-bending operation. To feed the walruses we would have to:
+
 - create a brand new stomach that’s the same as the old stomach, but with some cheese in it.
 - Then, create a new walrus that’s the same as the old walrus, except, with the stomach replaced.
 - Then, throw away all the old walrus.
@@ -35,6 +37,7 @@ At first glance, this sounds bonkers but stay with me - let’s look at what mak
 ## How does it prevent pain when debugging?
 
 Have you ever encountered:
+
 - `undefined is not a function` in JavaScript?
 - `NullPointerException`s in Java?
 - `SegFault` in C/C++?

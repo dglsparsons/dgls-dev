@@ -39,6 +39,7 @@ This lack of clarity makes the code harder to scan through, and hurts the readab
 The ability to quickly and efficiently scan code is super important. Digesting small sections of code in isolation is a key part of this. We don't want to always have to read every line of code to understand a small part of a codebase.
 
 Else statements make this harder as they space out the `if` condition and the code that is affected by it. This is best explained through two examples. First, can you tell what happens when these three lines of code are run?
+
 ```go
 if myVariable == nil {
   return “”
@@ -46,22 +47,26 @@ if myVariable == nil {
 ```
 
 Hopefully, this is fairly obvious. Let's take a contrasting example though:
+
 ```go
 } else {
   return “”
 }
 ```
+
 We can see that without the `if` statement, we can't determine what this is meant to be doing. Why would it return an empty string? Is this an error, or the ‘normal' behaviour? This code instead relies on us remembering, and having read, the earlier context. This doesn't matter much when the statements are small, but if there's complicated logic within the `if { … }` block or we are scanning quickly, then the separation of context from code can hurt readability massively. It hurts even more when if/else statements are nested, or there are multiple of them in one function (which if statement is this else for?).
 
 ## How to remove else statements?
 
 Now we've agreed that else statements are rubbish. But that's not much help by itself. The real trick is how to avoid them. Thankfully, there are two simple ways to do this:
+
 - Inverting the `if` condition and returning early, and,
 - Creating helper functions.
 
 ## Inverting the condition
 
 This is the most common instance I come across. It can take two forms too - one where the `else` is implicit, one where it is explicit. The explicit version looks like the following:
+
 ```go
 func doSomething() error {
   if something.OK() {
@@ -74,11 +79,13 @@ func doSomething() error {
   }
 }
 ```
+
 The implicit is similar, but without containing an `else` statement per se. Instead, the `else` is implied by simply dropping off the end of the function (this one is more common in Python or JavaScript, where `None` or `undefined` are returned if nothing is explicitly stated).
+
 ```javascript
 function doSomething() {
   if (something.OK()) {
-    return something.Do()
+    return something.Do();
   }
 }
 ```
@@ -92,7 +99,7 @@ function doSomething() {
   if (!something.OK()) {
     // return or throw error
   }
-  return something.Do()
+  return something.Do();
 }
 ```
 
@@ -101,35 +108,37 @@ We can now scan this function and clearly see the indented error condition and n
 ## Helper Functions
 
 We also get else statements that don't directly result in a `return`. This is usually through some special-case logic that isn't isolated properly. For example
-```javascript
-  let charities
-  if (country != "") {
-    if (tier != "") {
-      charities = getCharitiesByCampaignCountryAndTier(campaign, country, tier)
-    } else {
-      charities = getCharitiesByCampaignAndCountry(campaign, country)
-    }
-  } else {
-    charities = getCharitiesByCampaign(campaign)
-  }
 
-  // do something with charities
+```javascript
+let charities;
+if (country != "") {
+  if (tier != "") {
+    charities = getCharitiesByCampaignCountryAndTier(campaign, country, tier);
+  } else {
+    charities = getCharitiesByCampaignAndCountry(campaign, country);
+  }
+} else {
+  charities = getCharitiesByCampaign(campaign);
+}
+
+// do something with charities
 ```
 
 The readability of this can be improved by pulling the charity-getting logic into its own function. This then lets the special cases be handled appropriately, and return early. By inverting some of the if statements, this can be improved further.
 
 For example:
+
 ```javascript
 function getCharities(campaign, country, tier) {
   if (country == "") {
-    return getCharitiesByCampaign(campaign)
+    return getCharitiesByCampaign(campaign);
   }
 
   if (tier == "") {
-    return getCharitiesByCampaignAndCountry(campaign, country)
+    return getCharitiesByCampaignAndCountry(campaign, country);
   }
 
-  return getCharitiesByCampaignCountryAndTier(campaign, country, tier)
+  return getCharitiesByCampaignCountryAndTier(campaign, country, tier);
 }
 ```
 
@@ -140,8 +149,8 @@ This helper function neatly encapsulates all the logic we'd need, removes the ne
 Else statements are a weird code smell. They harm the readability of any code by forcing equal levels of indents for error handling and for happy paths. They also have the unique ability to separate code from the logic that affects it. They are easy to avoid through the two techniques of returning early and splitting logic into helper functions. As a result, they are unnecessary. You can write better code and be a better programmer by never using them.
 
 Some caveats (to stop the pedants).
+
 - In SQL CASE WHEN … ELSE … isn't really avoidable.
 - In Scala, implicit returns (avoiding return statements for referential transparency) means you have to use them - you don't really have the ability to 'return early'.
 - Ternary operators are fine.
 - In python, the ternary operator uses `else`. This is also fine.
-

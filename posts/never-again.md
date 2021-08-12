@@ -31,6 +31,7 @@ Despite being in many ways an obvious improvement over Java, my experience with 
 As Scala derives from Java but mixes in functional paradigms, the language contains a huge amount. While being a strength in some ways, parts of Scala have some bizarre hangovers. We’ve all [mocked JavaScript](https://www.destroyallsoftware.com/talks/wat) for some of its bizarre and unexpected behaviour in code that looks correct. Scala often takes this to another level. It’s easy to slip up when writing code, and unless you know the language incredibly well, need to constantly be on the lookout for [common pitfalls](https://nrinaudo.github.io/scala-best-practices/) (or set up a linter for these).
 
 The second issue I faced with the language was really poor tooling:
+
 - Getting support in vim (my editor of choice) was a nightmare,
 - Automatically formatting code was far more difficult than I expected,
 - Finding a lightweight logger that didn’t require a thousand line XML file was impossible,
@@ -53,15 +54,14 @@ Not only had we overshot our MAU limit in a matter of hours, but we’d racked u
 
 One expensive bill later, that’s a mistake I don’t want to make again.
 
-
 ## Closing thoughts 💭
 
 These three technologies have scarred me as a developer. Having had to fight through difficult situations with each one of them, I know I’ll strive to avoid them in the future. In my experience, Django, Scala and Segment just aren't worth the pain.
 
-***
+---
 
 Do you have any technologies you feel the same about? Feel like I’ve missed some out? If so, what are they?
 
-***
+---
 
 Think I’m wrong about any of these? Get in touch and let me know.

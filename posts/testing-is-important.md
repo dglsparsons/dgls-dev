@@ -10,10 +10,10 @@ This is because we don’t hold our tests – unit tests, integration tests, end
 
 Let's challenge this and look at three qualities we expect of good production code, and apply this same thinking to test code – where such quality control is often absent.
 
-
 ## 1) Don’t Repeat Yourself (DRY) 🔁
 
 People are obsessed with DRY when it comes to production code, often taking it [too far](https://dev.to/wuz/stop-trying-to-be-so-dry-instead-write-everything-twice-wet-5g33). This same anti-repeating is rarely applied to tests. Instead, testing becomes a haven for duplication, with information copied all-over the place. This is most prevalent in two forms.
+
 - **Asserting** – Often there are a tonne of very similar tests, copy pasted with minor tweaks. In reality, they often cover the same test case, with the rationale that it’s “making extra sure”.
 - **Setup** – Some tests require laborious setup. Creating mock users, seeding test-data and making sure any dependencies are stubbed out. This setup often gets duplicated between tests or test-suites, with only minor tweaks.
 
@@ -31,7 +31,7 @@ This was great and worked really well – it was much easier to have open discus
 
 Then it came to ~~reviewing~~ the tests.
 
-*"Yeah, it has tests"* said one engineer to the other. *"Do they pass?"*, the second questioned. *"Yes"*, replied the first. *"That's good"*, confirmed the second, as both engineers sat nodding to each other as they absent-mindedly scrolled through several hundred lines of tests.
+_"Yeah, it has tests"_ said one engineer to the other. _"Do they pass?"_, the second questioned. _"Yes"_, replied the first. _"That's good"_, confirmed the second, as both engineers sat nodding to each other as they absent-mindedly scrolled through several hundred lines of tests.
 
 Let's look at the real problem here: the measure of quality had nothing to do with the tests, beyond them simply existing and passing. There was no discussion around edge cases. Were they testing the right things? Was the generation of the test data suitable? Did they take the right approach to mocking? Did the tests even accurately describe what they're doing.
 
@@ -44,37 +44,36 @@ It sounds obvious when it’s written out like that, right? But you’d be amaze
 ```javascript
 describe("mailing list list", () => {
   beforeEach(() => {
-    jest.spyOn(emailStorage, "save")
-    jest.spyOn(emailStorage, "rollback")
-  })
+    jest.spyOn(emailStorage, "save");
+    jest.spyOn(emailStorage, "rollback");
+  });
 
   it("should add an email to a mailing list", async () => {
-    const email = mockEmail()
+    const email = mockEmail();
 
-    const response = await mailingList.addEmail(email)
+    const response = await mailingList.addEmail(email);
 
     expect(response).toEqual({
       email: email,
-      subscribed: true
-    })
-    expect(emailStorage.save).toHaveBeenCalledTimes(1)
-    expect(emailStorage.rollback).toNotHaveBeenCalled()
-  })
-})
+      subscribed: true,
+    });
+    expect(emailStorage.save).toHaveBeenCalledTimes(1);
+    expect(emailStorage.rollback).toNotHaveBeenCalled();
+  });
+});
 ```
 
 This looks fairly typical, right? Although you could say that’s a lot of mocking for one test. It prompts the question:
 
-*“What are we actually testing here?”*
+_“What are we actually testing here?”_
 
-Are we *unit* testing the logic the function contains? Or are we testing that it *integrates* properly with the email storage?
+Are we _unit_ testing the logic the function contains? Or are we testing that it _integrates_ properly with the email storage?
 
-If it's a unit test, you’d argue to mock as much as you can so you are just testing the logic.  We seem to be asserting on the mocks a lot though, which wouldn’t be the case if we weren’t also testing the integration.
+If it's a unit test, you’d argue to mock as much as you can so you are just testing the logic. We seem to be asserting on the mocks a lot though, which wouldn’t be the case if we weren’t also testing the integration.
 
 In this case, how useful really is this test? It’s attempting to test an integration by integrating with a mock. This test looks a lot like it’s not really testing any behaviour at all - it’s just checking that the code does what the code does, at the same level of abstraction.
 
 Say for example, that the email storage didn’t behave the way we expected it to. Would this test fail? Should this test fail? If we rewrote the test to use the real email storage, and then tested it worked in reality, would this be more valuable?
-
 
 ## Closing Remarks 💬
 

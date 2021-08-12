@@ -1,5 +1,5 @@
 ---
-title: 'Tolerances: How Formula 1 pistons can teach us to be better developers'
+title: "Tolerances: How Formula 1 pistons can teach us to be better developers"
 description: Why do Formula 1 car pistons cost around 1,000 times the amount of a typical road car piston and what can this teach us about programming?
 date: 2021-01-18T11:00:00
 ---
@@ -10,7 +10,7 @@ This video seeks to answer the question: why does a Formula 1 car piston cost ar
 
 ![Whispering](/img/pistons.jpg)
 
-*Left: piston from an American muscle car. Right: piston from a formula 1 car.*
+_Left: piston from an American muscle car. Right: piston from a formula 1 car._
 
 So, what does this teach us about programming, and how to be a better developer?
 
@@ -21,7 +21,7 @@ Manufacturing a car piston is a game of playing with tolerances.
 The piston itself has to fit into a cylinder block snugly, with a small gap around the sides to allow it to move freely. If the gap between a piston and the cylinder is too big, then burning fuel can escape, and the piston is far less efficient. If the gap is too small, then the piston can seize up, blocking the engine completely.
 
 ![Piston Cycle](/img/piston-cycle.jpg)
-*The process a car piston goes through in a single cycle*
+_The process a car piston goes through in a single cycle_
 
 This adds some serious complexity for building these parts. Not only do they have to be designed to an incredible specification, but the margin for error when manufacturing these parts is so small that they require specialised machinery and special processes to make sure they are fit for purpose.
 
@@ -52,4 +52,3 @@ Focussing on tolerances and quality the first time around can lead to a huge inc
 Conversely, a focus on the low-cost, fast-paced development necessitates a lower tolerance for quality. This can be useful for getting a project into the world, but comes with a cost later down the line: you need regular oil changes and refactoring to keep everything neat, or you risk blowing up with a bang.
 
 In reality, most codebases lie between these two extremes. Rather than focussing solely on one extreme or the other, we need to be mindful of a balance. Insisting on quality over all else is a tradeoff, and at times isn’t the right one to make. Equally, we need to be careful of the costs down the line in cutting upfront quality. Next time you review a pull-request or submit a new feature, think of this tradeoff: do we mind oiling this a bit later, or do we want an immaculate Formula 1 piston right now?
-

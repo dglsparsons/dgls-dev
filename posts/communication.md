@@ -15,6 +15,7 @@ If you have, then you will know how challenging precise communication can be.
 When programming, all our communication immediately becomes at least twice as difficult. We write programs that have to be understood by the computer so they can run. But, they also have to be understood by future readers: people editing or maintaining them. They also have to capture exact requirements with little or no room for error. These requirements typically come from communication with non-programmers.
 
 At the very least this means all programs are acting on around four levels of communication:
+
 1. 🗣️ A non-technical individual communicating to a developer.
 2. 💻 A developer communicating his intent to an application.
 3. 🤖 The application running and communicating to the computer.
@@ -46,7 +47,6 @@ Communication is also inherently hard because of how language works. In everyday
 
 > He confidently replies "they had eggs!".
 
-
 ## 💥 So what can we do?
 
 We've identified that communication can act as Chinese whispers. Language can be ambiguous, and we have many different points of communication in our day-to-day working. As a result, the quality of any communication is of critical importance. An individual who is capable of communicating effectively with non-technical people, other programmers and with a computer is invaluable.
@@ -58,19 +58,19 @@ It's important to remember how we communicate. When thinking of communication my
 However, this is rarely the case. We communicate far more frequently in our work, and talking isn't the only way we communicate. Talking often isn't even the best way to communicate.
 
 There are four topics we communicate about and four ways we usually communicate these:
+
 1. Code - we communicate through reading and writing code
 2. Architecture - typically represented both in code and in diagrams.
 3. Requirements - these are usually gathered through conversations or user stories.
 4. Deadlines - usually through conversations or calendar events.
 
-For code. Having clear code, that is easy to understand and digest makes life much easier. It frees up our brains to solve problems, rather than focusing on the minutiae of how an application works. Just like Donald Knuth, I believe that "programs are meant to be read by humans and only incidentally for computers to execute". When writing code, optimising for readability should *always* be our main focus. A well-structured, well-written codebase is far less prone to misinterpretation. Far easier to digest, and much more enjoyable to work with.
+For code. Having clear code, that is easy to understand and digest makes life much easier. It frees up our brains to solve problems, rather than focusing on the minutiae of how an application works. Just like Donald Knuth, I believe that "programs are meant to be read by humans and only incidentally for computers to execute". When writing code, optimising for readability should _always_ be our main focus. A well-structured, well-written codebase is far less prone to misinterpretation. Far easier to digest, and much more enjoyable to work with.
 
 For architecture, we must clearly define and delineate any systems. Everything should have a clear purpose and a single responsibility. It should also be clear how these systems communicate. This should all be easy to digest (via diagrams, sensible naming, clear purpose and sensible code structure).
 
 For requirements, we must extract every degree of detail possible. Clarify on everything, even points that seem obvious. Make sure they are all written down and that a common understanding is reached across the team.
 
 Finally, deadlines. You might think these are unambiguous: "have X done by Y date". It seems straightforward, but remember that many "Agile" teams have to define what 'done' really means. Does it mean code complete? Tested? Deployed? Handed over to a different team? All the above and defects fixed?
-
 
 ## ✨ In Conclusion
 

@@ -34,17 +34,17 @@ Every single distraction we get when programming is one more thing to remember l
 
 Again, the solution here is simple: every time we want to diverge from the task we started on, we need to make a note. Attempting to remember does not work as this just adds to the cognitive load. Even more so because you can get distracted from a distraction. You can fix tech debt and get distracted by a bug. Or when you fix one problem, realise that there's another you didn't initially spot.
 
-I like to think of this as a stack of plates we are balancing, all of different sizes and shapes. Trying to keep one balanced isn't a problem. Getting diverted adds another plate to the top of the pile though. As we get diverted more and more the stack of plates becomes heavy,  difficult to balance, and increasingly precarious. If instead, we were to put each plate down as we picked up a new one (by writing it down), we can just keep a single plate balanced. The cognitive load here drops. We can instead use our brain to focus on the task at hand, rather than on balancing plates.
+I like to think of this as a stack of plates we are balancing, all of different sizes and shapes. Trying to keep one balanced isn't a problem. Getting diverted adds another plate to the top of the pile though. As we get diverted more and more the stack of plates becomes heavy, difficult to balance, and increasingly precarious. If instead, we were to put each plate down as we picked up a new one (by writing it down), we can just keep a single plate balanced. The cognitive load here drops. We can instead use our brain to focus on the task at hand, rather than on balancing plates.
 
 ## 3. 🕑 Spend Time Away
 
 ![Time Away](/img/relax.jpg)
 
-It's a widely held theory that sleep serves a clear purpose: it helps our brains decongest. Sleep helps store important memories and  things you've learned. It gets rid of unimportant memories. It allows our brains to sort through complicated thoughts and [feelings](https://www.healthline.com/health/why-do-we-dream).
+It's a widely held theory that sleep serves a clear purpose: it helps our brains decongest. Sleep helps store important memories and things you've learned. It gets rid of unimportant memories. It allows our brains to sort through complicated thoughts and [feelings](https://www.healthline.com/health/why-do-we-dream).
 
 Our brains are complicated devices. It's rarely clear how they work or what they are doing, and they are not well understood.
 
-But, this idea that sleep helps decongest our brains gives a powerful insight. Our brains are capable of doing *background processing*. We don't have to actively think on a problem for our brains to digest it. Did you ever wonder why people have some of their best ideas in the shower, or when they are out for a run? This explains why.
+But, this idea that sleep helps decongest our brains gives a powerful insight. Our brains are capable of doing _background processing_. We don't have to actively think on a problem for our brains to digest it. Did you ever wonder why people have some of their best ideas in the shower, or when they are out for a run? This explains why.
 
 Furthermore, it's important we tap into this background processing the brain can offer. Why bother banging your head against a wall over and over, when taking a break can allow our brain to figure things out?
 
@@ -55,6 +55,7 @@ Have you ever heard of [rubber duck debugging](https://en.wikipedia.org/wiki/Rub
 ![Rubber Duck](/img/duck.jpg)
 
 The idea used a rubber duck as this is an 'inanimate object', and prevents disrupting anyone else. However, this neglects all the benefits that talking to another person can provide. They can:
+
 - ask questions that make you consider your approach
 - provide suggestions on how you can tackle a problem
 - suggest alternative solutions
@@ -62,19 +63,19 @@ The idea used a rubber duck as this is an 'inanimate object', and prevents disru
 - often, provide more expertise on a subject area
 - provide a more intricate knowledge of existing solutions
 
-And, even more than this, the ability to share knowledge with a teammate is a valuable skill. By having two people understand a problem the brainpower used to solve a problem doubles. This can lead to better solutions (it's no wonder [pair programming](https://en.wikipedia.org/wiki/Pair_programming) exists).  Sharing, really is caring.
+And, even more than this, the ability to share knowledge with a teammate is a valuable skill. By having two people understand a problem the brainpower used to solve a problem doubles. This can lead to better solutions (it's no wonder [pair programming](https://en.wikipedia.org/wiki/Pair_programming) exists). Sharing, really is caring.
 
 ## ✅ To Conclude
 
 Programming is a complicated task. Programmers often have to hold many things in their memory. And yet, they are expected to simultaneously come up with creative solutions to complicated problems. This leads to a huge amount of cognitive load.
 
 The solution is simple though. We need to remove as much of this load as possible, allowing the brain to focus on the tasks at hand. We can achieve this in 4 simple ways:
+
 - By writing down everything we learn.
 - By bookmarking anything that we need to come back to.
 - By allowing our brains to unclog by spending time away.
 - By changing perspective and sharing with others.
 
-
 ---
 
-*Do you think there is anything I have missed? Do you use any of these methods? Please comment, or let me know.*
+_Do you think there is anything I have missed? Do you use any of these methods? Please comment, or let me know._
