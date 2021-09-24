@@ -1,0 +1,11 @@
+name: push
+on:
+  - push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: echo '${{ github.event.pusher.name }}'
+      - name: test2
+        run: echo '${{ github.event.commits[0].author.name }}'
