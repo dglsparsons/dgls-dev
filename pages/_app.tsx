@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import 'tailwindcss/tailwind.css'
 import Link from "next/link";
 import Head from "next/head";
 import type { AppProps } from "next/app";
