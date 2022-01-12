@@ -1,10 +1,10 @@
 ---
-title: Three unusual qualities we look for to hire amazing developers
+title: Three unusual qualities we look for in developers
 description: The qualities we do look for are probably considered unusual compared to most software engineering outfits. Let's take a look at the three we use to ensure a good fit for working at Shamaazi.
 date: 2020-12-11T12:00:00+00:00
 ---
 
-Here at Shamaazi, we’ve recently gone through a round of hiring… and wow, hiring is hard!
+At Shamaazi, we’ve recently gone through a round of hiring… and wow, hiring is hard!
 
 It’s challenging finding engineers who have the right qualities, attitude and personality to join a team. We’re a **tiny** company, with just 2 engineers, so any new teammates have a massive impact on our products and culture.
 

@@ -1,5 +1,5 @@
 ---
-title: 3 amazing REACT HOOKS to keep your code organized neatly
+title: 3 react hooks to keep your code organized neatly
 description: Here are the three React Hooks I have found the most useful for producing websites in the cleanest, simplest way possible. They manage localStorage, sessionStorage, authentication and asynchronous tasks.
 date: 2020-11-25T09:00:00
 ---

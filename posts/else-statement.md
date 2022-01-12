@@ -1,12 +1,10 @@
 ---
-title: Write better code and be a better programmer by NEVER USING ELSE statements
+title: Write better code and be a better programmer by avoiding else statements
 description: "I've written production code in a huge variety of languages, through Haskell, Scala, Go, Python, Java or JavaScript. Across all these, I noticed one significant trend: I pretty much never use the ELSE statement. Here's why."
 date: 2020-11-10T13:20:00
 ---
 
-I've been a professional programmer for the last several years. During this time I've risen rapidly through the ranks. I started as an intern, but I'm now the Lead Engineer responsible for a suite of products that serve over 160,000 people in over 140 different countries.
-
-Recently, I took a look back across all the code I've written during these years (that I still have access to). I've written production code in a huge variety of languages, through Haskell, Scala, Go, Python, Java or Javascript. Across all these, I noticed one significant trend: I pretty much never use the ELSE statement.
+I recently took a look back across all the code I've written during my career (that I still have access to). I've written production code in a decent variety of languages, including Haskell, Scala, Go, Python, Java or Javascript. Across all these, I noticed one significant trend: I pretty much never use else statements.
 
 I realised there's a clear rationale behind my aversion to else statements though. I believe that they shouldn't be used, and should be treated as a code smell instead. There are two reasons I think this: else statements break the line-of-sight rule, and they always lack context. I'll explain these two points in detail before showing how you can avoid using else statements.
 

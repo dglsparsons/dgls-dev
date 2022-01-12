@@ -1,5 +1,5 @@
 ---
-title: Go Logger - Why we wrote our own
+title: We wrote our own go logger
 description: At Shamaazi, we found the existing Go libraries for logging overcomplicated and not neatly doing what we wanted. Instead, we wrote our own. Here's why.
 date: 2020-10-09T13:50:00+00:00
 ---

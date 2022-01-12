@@ -1,5 +1,5 @@
 ---
-title: "Tolerances: How Formula 1 pistons can teach us to be better developers"
+title: "Tolerances: how formula 1 pistons can teach us to be better developers"
 description: Why do Formula 1 car pistons cost around 1,000 times the amount of a typical road car piston and what can this teach us about programming?
 date: 2021-01-18T11:00:00
 ---

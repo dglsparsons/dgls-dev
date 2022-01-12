@@ -1,5 +1,5 @@
 ---
-title: You should only write USEFUL tests
+title: You should only write useful tests
 description: A common mistake is to test every piece of code you write. This can be harmful and unnecessary. Let's explore why.
 date: 2020-09-18
 ---
