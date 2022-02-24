@@ -1,76 +1,108 @@
-import Head from "next/head";
-import { Fragment } from "react";
-import Link from "next/link";
+import { Link } from "../components/Link";
 import Image from "next/image";
-import { Post, getAllPosts } from "../posts";
+import { PageSEO } from "../components/SEO";
+import { siteMetadata } from "../data/siteMetadata";
+import { getAllPosts, Post } from "../lib/posts";
+import formatDate from "../lib/utils/formatDate";
 
-export default function Home({ posts }: { posts: Post[] }) {
-  return (
-    <>
-      <Head>
-        <title>Douglas Parsons&apos; Blog</title>
-        <meta
-          name="description"
-          content="I'm a software engineer at Vercel. This is a place for my thoughts on programming and the world in general."
-        />
-        <meta
-          property="og:description"
-          content="I'm a software engineer at Vercel. This is a place for my thoughts on programming and the world in general."
-        />
-      </Head>
-      <main className="flex-grow">
-        <div className="grid sm:grid-cols-fr-auto gap-6">
-          <div>
-            <h2 className="text-xl font-medium">Hi, I&apos;m Douglas 👋</h2>
-            <p className="italic mt-6">
-              I&apos;m a software engineer currently at ▲{' '}
-              <a
-                href="https://vercel.com"
-                className="hover:underline text-indigo-600"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Vercel
-              </a>
-            </p>
-            <p className="italic mt-3">
-              This is a place for my thoughts on programming and the world in
-              general.
-            </p>
-          </div>
-          <div className="rounded-full overflow-hidden w-32 h-32 border border-gray-200">
-            <Image
-              src="/me-nyx.jpg"
-              alt="Me & my cat"
-              width={128}
-              height={128}
-              objectFit="cover"
-            />
-          </div>
-        </div>
-        <div className="grid grid-cols-auto-fr gap-x-6 gap-y-8 mt-16">
-          {posts.map((p) => {
-            return (
-              <Fragment key={p.id}>
-                <aside className="flex text-gray-500 items-center justify-end">
-                  {p.date}
-                </aside>
-                <Link href={`/posts/${p.id}`}>
-                  <a className="hover:underline text-lg cursor-pointer font-medium">
-                    {p.title}
-                  </a>
-                </Link>
-              </Fragment>
-            );
-          })}
-        </div>
-      </main>
-    </>
-  );
+import { NewsletterForm } from "../components/NewsletterForm";
+import { GetStaticProps } from "next";
+
+const TOP_POST_COUNT = 8;
+
+interface HomeProps {
+  posts: Post[];
 }
 
-export async function getStaticProps() {
-  return {
-    props: { posts: await getAllPosts() },
-  };
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const posts = await getAllPosts();
+  return { props: { posts } };
+};
+
+export default function Home({ posts }: HomeProps) {
+  return (
+    <>
+      <PageSEO
+        title={siteMetadata.title}
+        description={siteMetadata.description}
+      />
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <section className="pt-6 pb-8 flex justify-between space-x-2">
+          <div className="space-y-2 md:space-y-5">
+            <h1 className="text-3xl font-extrabold leading-relaxed tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10">
+              Doug Parsons
+              <span className="relative sm:ml-4 w-max block sm:inline-block before:absolute before:-inset-1 before:block before:-skew-y-2 before:bg-primary-400">
+                <span className="relative text-gray-100 skew-y-2">
+                  (@dglsparsons)
+                </span>
+              </span>
+            </h1>
+            <p className="prose text-gray-500 dark:text-gray-400">
+              Software engineer at Vercel. I like to build simple, reliable
+              software that makes people's lives easier. I try to{" "}
+              <Link href="https://twitter.com/search?q=%23buildinpublic">
+                Build in Public
+              </Link>{" "}
+              and{" "}
+              <Link href="https://twitter.com/search?q=%23learninpublic">
+                Learn in Public
+              </Link>
+              .
+            </p>
+          </div>
+          <div className="hidden sm:flex flex-shrink-0 flex-grow-0 rounded-full shadow shadow-primary-500/50 w-[176px] h-[176px]">
+            <Image
+              src={siteMetadata.image}
+              width="176px"
+              height="176px"
+              alt="avatar"
+              className="rounded-full"
+            />
+          </div>
+        </section>
+        <section className="pt-6 pb-8 space-y-2 md:space-y-5">
+          <h2 className="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
+            Latest Posts
+          </h2>
+          <ul className="space-y-1">
+            {!posts.length && "No posts found."}
+            {posts.slice(0, TOP_POST_COUNT).map(({ slug, date, title }) => {
+              return (
+                <li key={slug}>
+                  <Link
+                    className="text-md font-semibold leading-8 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 hover:underline"
+                    href={`/posts/${slug}`}
+                  >
+                    {title}{" "}
+                  </Link>
+                  <time
+                    className="text-xs font-normal text-gray-500 dark:text-gray-400"
+                    dateTime={date}
+                  >
+                    {formatDate(date)}
+                  </time>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      </div>
+      {posts.length > TOP_POST_COUNT && (
+        <div className="text-base font-medium leading-6">
+          <Link
+            href="/posts"
+            className="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
+            aria-label="See all posts"
+          >
+            See all posts &rarr;
+          </Link>
+        </div>
+      )}
+      {siteMetadata.newsletter.provider !== "" && (
+        <div className="flex items-center justify-center pt-4">
+          <NewsletterForm />
+        </div>
+      )}
+    </>
+  );
 }

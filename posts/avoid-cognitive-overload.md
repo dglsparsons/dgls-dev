@@ -2,6 +2,9 @@
 title: Avoid cognitive overload when programming in 4 simple ways
 description: Programming can be an arduous activity. You have to remember what you are doing, the context and inner workings of a system, the building blocks of the language you are using. All while coming up with creative solutions to problems. All this can lead to COGNITIVE OVERLOAD. Luckily, there are some simple steps we can take to avoid this.
 date: 2020-10-26T09:51:00
+tags:
+  - career
+  - code
 ---
 
 Programming can be an arduous activity. You have to remember what you are doing. Remember the context and inner workings of an application or system. Remember the syntax and building blocks of the language you are working in. Remember locations of code to come back to and tweak later. Remember what steps you have to take to achieve a goal. And you often have to do all this while learning a new codebase, technology, language and domain.

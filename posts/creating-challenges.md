@@ -2,6 +2,9 @@
 title: "Creating challenges: three ways to improve the technical assessment"
 description: I’ve been reflecting on ‘what makes a good engineering assessment’, and I’ve come to the conclusion that a good assessment – as part of recruiting – should pay careful attention to three main things.
 date: 2020-12-30T18:45:00
+tags:
+  - career
+  - guide
 ---
 
 Through December, I spent a large amount of time doing two things: working my way through the 2020 [Advent Of Code](https://adventofcode.com/); and assessing applications for a job opening we had at Shamaazi. The two initially sound unrelated, but part of our hiring process involves sending candidates an engineering assignment. Similarly, some people use Advent Of Code as [interview preparation](https://y3l2n.com/2018/05/09/interview-prep-advent-of-code/).

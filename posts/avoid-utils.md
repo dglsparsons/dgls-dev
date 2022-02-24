@@ -2,6 +2,9 @@
 title: "Don't write utils; name carefully"
 description: "I hate the word ‘utility’. It says absolutely nothing. And yet, I come across it in so often when programming. It can take different guises too: ‘common’, ‘shared’, ‘lib’, ‘pkg’, ‘tools’, etc. These names can appear both as filenames or as directory names and drive me insane when they do."
 date: 2020-12-01T15:05:00
+tags:
+  - quality
+  - code
 ---
 
 I hate the word ‘utility’. It says absolutely nothing. And yet, I come across it in so often when programming. It can take different guises too: ‘common’, ‘shared’, ‘lib’, ‘pkg’, ‘tools’, etc. These names can appear both as filenames or as directory names and drive me insane when they do.

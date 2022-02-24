@@ -2,6 +2,10 @@
 title: You should only write useful tests
 description: A common mistake is to test every piece of code you write. This can be harmful and unnecessary. Let's explore why.
 date: 2020-09-18
+tags:
+  - tests
+  - code
+  - quality
 ---
 
 Through my career in software I've come across a broad range of attitudes and opinions towards testing code. The two
