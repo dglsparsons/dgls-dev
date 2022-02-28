@@ -64,19 +64,19 @@ export default function Home({ posts }: HomeProps) {
           <h2 className="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
             Latest Posts
           </h2>
-          <ul className="space-y-1">
+          <ul className="space-y-3">
             {!posts.length && "No posts found."}
             {posts.slice(0, TOP_POST_COUNT).map(({ slug, date, title }) => {
               return (
                 <li key={slug}>
                   <Link
-                    className="text-md font-semibold leading-8 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 hover:underline"
+                    className="text-md font-semibold text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 hover:underline"
                     href={`/posts/${slug}`}
                   >
                     {title}{" "}
                   </Link>
                   <time
-                    className="text-xs font-normal text-gray-500 dark:text-gray-400"
+                    className="text-sm font-normal text-gray-500 dark:text-gray-400"
                     dateTime={date}
                   >
                     {formatDate(date)}
