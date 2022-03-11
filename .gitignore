@@ -34,3 +34,6 @@ npm-debug.log*
 feed.js
 posts.js
 public/feed.xml
+
+# typescript
+*.tsbuildinfo

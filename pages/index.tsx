@@ -39,7 +39,7 @@ export default function Home({ posts }: HomeProps) {
             </h1>
             <p className="prose text-gray-500 dark:text-gray-400">
               Software engineer at Vercel. I like to build simple, reliable
-              software that makes people's lives easier. I try to{" "}
+              software that makes people&apos;s lives easier. I try to{" "}
               <Link href="https://twitter.com/search?q=%23buildinpublic">
                 Build in Public
               </Link>{" "}
