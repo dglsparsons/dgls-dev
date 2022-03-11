@@ -14,16 +14,16 @@ export function Footer() {
         <Icon href={`mailto:${siteMetadata.email}`}>
           <Email />
         </Icon>
-        <Icon href={`mailto:${siteMetadata.github}`}>
+        <Icon href={siteMetadata.github}>
           <Github />
         </Icon>
-        <Icon href={`mailto:${siteMetadata.youtube}`}>
+        <Icon href={siteMetadata.youtube}>
           <Youtube />
         </Icon>
-        <Icon href={`mailto:${siteMetadata.linkedin}`}>
+        <Icon href={siteMetadata.linkedin}>
           <LinkedIn />
         </Icon>
-        <Icon href={`mailto:${siteMetadata.twitter}`}>
+        <Icon href={siteMetadata.twitter}>
           <Twitter />
         </Icon>
       </div>

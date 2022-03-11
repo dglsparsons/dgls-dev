@@ -45,13 +45,13 @@ export function AuthorLayout({ children, frontMatter }: any) {
               <Icon href={`mailto:${email}`}>
                 <Email />
               </Icon>
-              <Icon href={`mailto:${github}`}>
+              <Icon href={github}>
                 <Github />
               </Icon>
-              <Icon href={`mailto:${linkedin}`}>
+              <Icon href={linkedin}>
                 <LinkedIn />
               </Icon>
-              <Icon href={`mailto:${twitter}`}>
+              <Icon href={twitter}>
                 <Twitter />
               </Icon>
             </div>
